@@ -19,10 +19,20 @@ var orm = {
             console.log(result);
             // res.redirect("/");
         });
+    },
+    updateOne: function(burgerId) {
+        var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
+        connection.query(queryString, [burgerId], function(error, result) {
+            if (error) throw error;
+            console.log(result);
+            // res.redirect("/");
+        });
     }
 }
 
 orm.selectAll('burgers');
 // module.exports = orm;
 orm.insertOne('Big Mac');
+orm.selectAll('burgers');
+orm.updateOne(7);
 orm.selectAll('burgers');
