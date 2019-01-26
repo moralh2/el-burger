@@ -1,0 +1,25 @@
+{
+  "name": "el-burger",
+  "version": "1.0.0",
+  "description": "Burger Restaurant App - MySQL, Express, Handlebars, ORM",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moralh2/el-burger.git"
+  },
+  "author": "h morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moralh2/el-burger/issues"
+  },
+  "homepage": "https://github.com/moralh2/el-burger#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
