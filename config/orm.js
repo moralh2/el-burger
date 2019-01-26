@@ -14,4 +14,5 @@ var orm = {
     }
 }
 
-module.exports = orm;
+orm.selectAll('burgers');
+// module.exports = orm;
