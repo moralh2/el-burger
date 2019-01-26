@@ -11,8 +11,18 @@ var orm = {
             if (error) throw error;
             console.log(result);
         });
+    },
+    insertOne: function(burgerName) {
+        var queryString = "INSERT INTO burgers (name) VALUES (?)";
+        connection.query(queryString, [burgerName], function(error, result) {
+            if (error) throw error;
+            console.log(result);
+            // res.redirect("/");
+        });
     }
 }
 
 orm.selectAll('burgers');
 // module.exports = orm;
+orm.insertOne('Big Mac');
+orm.selectAll('burgers');
