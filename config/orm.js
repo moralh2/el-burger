@@ -5,31 +5,28 @@ var connection = require("./connection")
 // Object Relational Mapper
 
 var orm = {
-    selectAll: function(tableName, cb) {
+    selectAll: function(tableName, ormCb) {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableName], function(error, result) {
             if (error) throw error;
             console.log(result);
-            console.log("AAA");
-            // result.redirect("/");
-            cb(result);
-
+            ormCb(result);
         });
     },
-    insertOne: function(tableName, columnName, columnValue) {
+    insertOne: function(tableName, columnName, columnValue, ormCb) {
         var queryString = "INSERT INTO ?? (??) VALUES (?)";
         connection.query(queryString, [tableName, columnName, columnValue], function(error, result) {
             if (error) throw error;
             console.log(result);
-            // res.redirect("/");
+            ormCb(result);
         });
     },
-    updateOne: function(tableName, columnName, columnValue, burgerId) {
+    updateOne: function(tableName, columnName, columnValue, burgerId, ormCb) {
         var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
         connection.query(queryString, [tableName, columnName, columnValue, burgerId], function(error, result) {
             if (error) throw error;
             console.log(result);
-            // res.redirect("/");
+            ormCb(result);
         });
     }
 }

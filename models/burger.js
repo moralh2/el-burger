@@ -2,21 +2,19 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-    all: function(callback) {
+    all: function(modelCb) {
         orm.selectAll('burgers', function(response) {
-            console.log("BBB");
-            callback(response);
+            modelCb(response);
         });
     },
-
-    insertNew: function(value, callback) {
+    insertNew: function(value, modelCb) {
         orm.insertOne('burgers', 'name', value, function(response) {
-            callback(response);
+            modelCb(response);
         });
     },
-    eat: function(value, callback) {
+    eat: function(value, modelCb) {
         orm.updateOne('burgers', 'devoured', true, value, function(response) {
-            callback(response);
+            modelCb(response);
         })
     }
 
