@@ -12,9 +12,9 @@ var orm = {
             console.log(result);
         });
     },
-    insertOne: function(burgerName) {
-        var queryString = "INSERT INTO burgers (name) VALUES (?)";
-        connection.query(queryString, [burgerName], function(error, result) {
+    insertOne: function(tableName, columnName, columnValue) {
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
+        connection.query(queryString, [tableName, columnName, columnValue], function(error, result) {
             if (error) throw error;
             console.log(result);
             // res.redirect("/");
@@ -33,7 +33,7 @@ var orm = {
 module.exports = orm;
 
 // orm.selectAll('burgers');
-// orm.insertOne('Big Mac');
+// orm.insertOne('burgers', 'name', 'Big Mac');
 // orm.selectAll('burgers');
 // orm.updateOne(7);
 // orm.selectAll('burgers');
