@@ -11,11 +11,18 @@ var burger = {
     insertNew: function(value, callback) {
         orm.insertOne('burgers', 'name', value, function(response) {
             callback(response);
+        });
+    },
+    eat: function(value, callback) {
+        orm.updateOne('burgers', 'devoured', true, value, function(response) {
+            callback(response);
         })
     }
+
 }
 
 burger.all();
 burger.insertNew('Quarter Pounder');
 burger.all();
-
+burger.eat(7);
+burger.all();

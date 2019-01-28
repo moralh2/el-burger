@@ -32,8 +32,8 @@ var orm = {
 
 module.exports = orm;
 
-orm.selectAll('burgers');
-orm.insertOne('burgers', 'name', 'Big Mac');
-orm.selectAll('burgers');
-orm.updateOne('burgers', 'devoured', 1, 7);
-orm.selectAll('burgers');
+// orm.selectAll('burgers');
+// orm.insertOne('burgers', 'name', 'Big Mac');
+// orm.selectAll('burgers');
+// orm.updateOne('burgers', 'devoured', 1, 7);
+// orm.selectAll('burgers');
