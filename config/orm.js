@@ -5,11 +5,15 @@ var connection = require("./connection")
 // Object Relational Mapper
 
 var orm = {
-    selectAll: function(tableName) {
+    selectAll: function(tableName, cb) {
         var queryString = "SELECT * FROM ??";
         connection.query(queryString, [tableName], function(error, result) {
             if (error) throw error;
             console.log(result);
+            console.log("AAA");
+            // result.redirect("/");
+            cb(result);
+
         });
     },
     insertOne: function(tableName, columnName, columnValue) {

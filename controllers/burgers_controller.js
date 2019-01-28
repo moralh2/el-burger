@@ -11,10 +11,13 @@ var burger = require("../models/burger.js");
 router.get("/", function (request, response) {
     burger.all(function (data) {
         var hbsObject = {
-            burger: data
+            burgers: data
         };
+        console.log("CCCC");
+
         console.log(hbsObject);
-        res.render("index", hbsObject);
+        // res.end("HOla");
+        response.render("index", hbsObject);
     });
 });
 
