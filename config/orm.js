@@ -30,9 +30,10 @@ var orm = {
     }
 }
 
-orm.selectAll('burgers');
-// module.exports = orm;
-orm.insertOne('Big Mac');
-orm.selectAll('burgers');
-orm.updateOne(7);
-orm.selectAll('burgers');
+module.exports = orm;
+
+// orm.selectAll('burgers');
+// orm.insertOne('Big Mac');
+// orm.selectAll('burgers');
+// orm.updateOne(7);
+// orm.selectAll('burgers');
