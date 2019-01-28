@@ -20,9 +20,9 @@ var orm = {
             // res.redirect("/");
         });
     },
-    updateOne: function(burgerId) {
-        var queryString = "UPDATE burgers SET devoured = 1 WHERE id = ?";
-        connection.query(queryString, [burgerId], function(error, result) {
+    updateOne: function(tableName, columnName, columnValue, burgerId) {
+        var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
+        connection.query(queryString, [tableName, columnName, columnValue, burgerId], function(error, result) {
             if (error) throw error;
             console.log(result);
             // res.redirect("/");
@@ -32,8 +32,8 @@ var orm = {
 
 module.exports = orm;
 
-// orm.selectAll('burgers');
-// orm.insertOne('burgers', 'name', 'Big Mac');
-// orm.selectAll('burgers');
-// orm.updateOne(7);
-// orm.selectAll('burgers');
+orm.selectAll('burgers');
+orm.insertOne('burgers', 'name', 'Big Mac');
+orm.selectAll('burgers');
+orm.updateOne('burgers', 'devoured', 1, 7);
+orm.selectAll('burgers');
