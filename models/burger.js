@@ -21,8 +21,12 @@ var burger = {
 
 }
 
-burger.all();
-burger.insertNew('Quarter Pounder');
-burger.all();
-burger.eat(7);
-burger.all();
+// Export burger model
+module.exports = burger;
+
+
+// burger.all();
+// burger.insertNew('Quarter Pounder');
+// burger.all();
+// burger.eat(7);
+// burger.all();
