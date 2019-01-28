@@ -5,7 +5,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model for burger
-var cat = require("../models/burger.js");
+var burger = require("../models/burger.js");
 
 // Create home route
 router.get("/", function (request, response) {
@@ -17,3 +17,5 @@ router.get("/", function (request, response) {
         res.render("index", hbsObject);
     });
 });
+
+module.exports = router;
