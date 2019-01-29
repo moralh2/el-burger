@@ -18,4 +18,11 @@ router.get("/", function (request, response) {
     });
 });
 
+router.post("/api/burgers", function(request, response) {
+    burger.insertNew(request.body.burgerName, function (result) {
+        console.log(result)
+        response.json({ id: result.insertId });
+    });
+});
+
 module.exports = router;
