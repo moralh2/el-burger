@@ -1,3 +1,16 @@
-img {
-    max-width: 30%;
+body {
+    background-color: #000000;
+    padding: 0px;
+    margin: 0px;
+}
+
+#gradient {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(to right, #86d876 0%,#7ae76c 0%,#ef3f3f 100%,#e4760f 100%);
+}
+
+#main-burger-img {
+    max-width: 40%;
 }
